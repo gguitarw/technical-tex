@@ -1,0 +1,35 @@
+\ProvidesPackage{sty/custom}
+
+% Meta
+\newcommand{\projectName}{Project Name}
+\newcommand{\docVersion}{0.0.1}
+
+\newcommand{\myUniversityShort}{WSU-V}
+\newcommand{\myUniversityLong}{Washington State University Vancouver}
+\newcommand{\myClass}{CS 4xx}
+\newcommand{\myClassTitle}{Software Design}
+\newcommand{\myAssignment}{Software Requirements Specification}
+\newcommand{\myAssignmentSubtitle}
+
+\newcommand{\myDate}{\today}
+\newcommand{\mySemester}{\myUniversityShort\ Fall 2020}
+
+% Convenient shortcuts
+\newcommand{\gand}{\wedge}              % Logical 'and'
+\newcommand{\gor}{\vee}                 % Logical 'or'
+\newcommand{\gnot}{\neg \hspace{.2em}}  % Logical 'not'
+\newcommand{\gintersect}{\cap}          % Set intersection
+\newcommand{\gunion}{\cup}              % Set union
+\newcommand{\gpipe}{\hspace{.2em} \vert \hspace{.2em}} % Just doing | doesn't leave much space on either side
+\newcommand{\gsum}{\sum\limits}         % Saving keystrokes
+\newcommand{\gnl}{\vspace{1ex}\\}       % New line, but with a little extra space
+\newcommand{\gtab}{\-\hspace{20pt}}
+\newcommand{\inch}{^{\prime\prime}}
+
+% Very visible TODO
+\newcommand{\todo}{{\LARGE\color{red}\textbf{TODO}}}
+
+% Typeset C++ symbol
+% https://tex.stackexchange.com/a/251025
+\newcommand{\Rplus}{\protect\hspace{-.1em}\protect\raisebox{.35ex}{\smaller{\smaller\textbf{+}}}}
+\newcommand{\Cpp}{\mbox{C\Rplus\Rplus}}

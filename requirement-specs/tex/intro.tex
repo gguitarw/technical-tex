@@ -1,0 +1,26 @@
+
+\section{Introduction}\label{sec:introduction}
+    \subsection{Document Purpose}\label{sec:document-purpose}
+    \subsection{Product Scope}\label{sec:product-scope}
+    \subsection{Intended Audience and Document Overview}\label{sec:audience-overview}
+        This \gls{srs} document is intended for developers, clients, and the project's grading professor. Developers should read this document to be familiar with the requirements and conventions before beginning to contribute. Clients may want to read this document to be familiar with the goals of the product before committing to using it.
+        \par The rest of this document is organized by section and subsections according to the \hyperref[toc]{table of contents}. Each type of reader should start with the overall description (section~\ref{sec:overall-description}) and specific requirements (section~\ref{sec:specific-requirements}), then developers should continue to read the non-functional requirements (section~\ref{sec:non-functional-requirements}). Additionally, clients may find safety and security (section~\ref{sec:safety-security}) information useful when evaluating the product.
+    \subsection{Document Conventions}\label{sec:document-conventions}
+        In general this document follows the IEEE formatting requirements.
+        \begin{itemize}
+            \item Arial font family
+            \item 12pt font
+            \item Italicized comments
+            \item Single spaced lines
+            \item $1\inch$ margins
+        \end{itemize}
+
+        \subsubsection{Code Snippet Example}\label{sec:code-snippet-example}
+            \begin{minted}{cpp}
+#include <compare>
+struct IntWrapper {
+    int value;
+    constexpr IntWrapper(int value): value{value} { }
+    auto operator<=>(const IntWrapper&) const = default;
+};
+            \end{minted}
