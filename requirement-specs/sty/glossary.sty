@@ -1,9 +1,9 @@
 \ProvidesPackage{sty/glossary}
 % https://en.wikibooks.org/wiki/LaTeX/Glossary
 
-%%%%%%%%%%%%%%%%%%%%%
-%%%% DEFINITIONS %%%%
-%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%
+%% DEFINITIONS %%
+%%%%%%%%%%%%%%%%%
 
 % Basic usage in document:
 %   \gls{label}
@@ -18,7 +18,13 @@
 %     % , plural={} % Default plural appends an 's'
 % }
 
-% EXAMPLE
+% EXAMPLES
+\newglossaryentry{latex}{
+    name={LaTeX},
+    text={\LaTeX},
+    description={\href{https://www.latex-project.org/}{is a high-quality typesetting system; it includes features designed for the production of technical and scientific documentation}}
+}
+
 \newglossaryentry{ts-def}{
     name={TypeScript},
     description={\href{http://www.typescriptlang.org/}{is a typed superset of JavaScript that compiles to plain JavaScript}}
@@ -26,9 +32,9 @@
 
 
 
-%%%%%%%%%%%%%%%%%%
-%%%% ACRONYMS %%%%
-%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%
+%% ACRONYMS %%
+%%%%%%%%%%%%%%
 
 % Basic usage:
 %   \gls{label}
@@ -37,7 +43,7 @@
 %   \acrfull{label}  -> Amazon Web Services (AWS)
 %   \arcshort{label} -> AWS
 
-% \newacronym{label}{abbreviation}{words}
+% \newacronym{keyword}{ABREV}{Unabbreviated Wording}
 
 % EXAMPLES
 \newacronym{aws}{AWS}{Amazon Web Services}

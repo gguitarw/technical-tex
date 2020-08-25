@@ -5,7 +5,7 @@
 \usepackage{sty/custom}
 \usepackage{sty/glossary}
 \usepackage{sty/style}
-\usepackage{sty/wsu-ieee}
+% \usepackage{sty/wsu-zhao-ieee}
 
 \begin{document}
 \pagestyle{pre}
@@ -15,11 +15,14 @@
 
 \pagebreak
 \tableofcontents\label{toc}
+% \listoffigures\label{lof}
 
 \label{EndOfPre}
 \pagebreak
 \pagestyle{body}
 \pagenumbering{arabic}
+
+% If using a single file for body: \input{./tex/body.tex}
 
 \input{./tex/intro.tex}
 
@@ -36,8 +39,8 @@
 \pagebreak
 \pagestyle{post}
 \pagenumbering{alph}
-
 \appendix
+
 \input{./tex/glossary.tex}
 
 \pagebreak

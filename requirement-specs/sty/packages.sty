@@ -37,7 +37,7 @@
 \usepackage{array}
 
 % Code blocks and syntax highlighting
-\usepackage{listings}
+\usepackage{minted}
 
 % Highlighting, \hl{texthere}
 \usepackage{soul}
@@ -51,19 +51,21 @@
 % Bibliography (see https://en.wikibooks.org/wiki/LaTeX/Bibliographies_with_biblatex_and_biber)
 \usepackage[
     backend=biber, % biber or bibtex
-    style=ieee
+    style=ieee,
+    citestyle=numeric-comp
 ]{biblatex}
 \bibliography{references}
 
 % Automate definitions, acronyms, and abbreviations
 % `nonumberlist` is used here to remove the page number of references
-\usepackage[acronym, nonumberlist, section=subsection, numberedsection]{glossaries}
+% Use `numberedsection` to add subsections for definitions and acronyms
+\usepackage[acronym, nonumberlist, section=subsection]{glossaries}
 \makenoidxglossaries
 % \makeglossaries didn't work, see link for details (search "noidx")
 % http://tug.ctan.org/tex-archive/macros/latex/contrib/glossaries/glossariesbegin.html
 
 % For special positioning of the WSU-V banner
-\usepackage{tikzpagenodes}
+% \usepackage{tikzpagenodes}
 
 % Drawing and graphs
 \usepackage{tikz}
@@ -73,5 +75,12 @@
 \usepackage{setspace}
 \singlespacing
 
-% For lorem-ipsum type paragraphs
-\usepackage{kantlipsum}
+% Include .pdf files in this one
+\usepackage{pdfpages}
+
+% Used for typesetting C++ symbol
+\usepackage{relsize}
+
+% Used to remove empty date field in bibliography
+% https://tex.stackexchange.com/a/151264
+\usepackage{xpatch}

@@ -263,3 +263,8 @@ TSWLatexianTemp*
 
 # standalone packages
 *.sta
+
+
+
+# Specific .pdfs
+requirement-specs/srs.pdf
