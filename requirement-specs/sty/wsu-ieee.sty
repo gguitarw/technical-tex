@@ -1,0 +1,67 @@
+\ProvidesPackage{sty/wsu-ieee}
+
+% Conform to the example IEEE-Citation-StyleGuide given by Zhao, WSUV F19 CS 320
+% Author(s)*. “Title.” Internet: complete URL, date updated* [date accessed]
+% * optional
+
+% Use "Internet: " instead of "[Online]. Available: "
+\DefineBibliographyStrings{english}{url = Internet: }
+
+% Surround title in quotation marks
+\DeclareFieldFormat[online]{title}{``#1''\isdot}
+
+% Use correct date format
+% % https://tex.stackexchange.com/a/343561
+\DeclareFieldFormat{urldate}{%
+    [\mkbibmonth{\thefield{urlmonth}}\addspace%
+    \thefield{urlday}\addcomma \addspace%
+    \thefield{urlyear}\isdot]%
+}
+
+% Keep the comma after url regardless of which dates are used
+\newbibmacro*{date+urldate}{%
+    \setunit*{\addcomma\addspace}%
+    \usebibmacro{date}%
+    \setunit*{\addspace}%
+    \usebibmacro{urldate}%
+}
+
+% Reorder fields so that date is between url and accessed date
+% https://tex.stackexchange.com/a/46808
+\DeclareBibliographyDriver{online}{%
+    \usebibmacro{bibindex}%
+    \usebibmacro{begentry}%
+    \usebibmacro{author/editor+others/translator+others}%
+    \setunit{\adddot\addspace}%
+    \usebibmacro{title}%
+    \setunit{\adddot\addspace}%
+    \printlist{language}%
+    \setunit{\adddot\addspace}%
+    \usebibmacro{byauthor}%
+    \setunit{\adddot\addspace}%
+    \usebibmacro{byeditor+others}%
+    \setunit{\adddot\addspace}%
+    \printfield{version}%
+    \setunit{\adddot\addspace}%
+    \printfield{note}%
+    \newunit\newblock
+    \printlist{organization}%
+    \setunit{\adddot\addspace}%
+    \iftoggle{bbx:eprint}
+        {\usebibmacro{eprint}}
+        {}%
+    \newunit\newblock
+    \usebibmacro{url}%
+    \setunit{\addcomma\addspace}%
+    \usebibmacro{date+urldate}%
+    \setunit{\adddot\addspace}%
+    \usebibmacro{addendum+pubstate}%
+    \setunit{\bibpagerefpunct}\newblock
+    \usebibmacro{pageref}%
+    \newunit\newblock
+    \iftoggle{bbx:related}
+        {\usebibmacro{related:init}%
+        \usebibmacro{related}}
+        {}%
+    \usebibmacro{finentry}
+}

@@ -1,0 +1,50 @@
+\ProvidesPackage{sty/glossary}
+% https://en.wikibooks.org/wiki/LaTeX/Glossary
+
+%%%%%%%%%%%%%%%%%%%%%
+%%%% DEFINITIONS %%%%
+%%%%%%%%%%%%%%%%%%%%%
+
+% Basic usage in document:
+%   \gls{label}
+%   \Gls{capital}
+%   \glspl{plural}
+%   \Glspl{plurcap}
+
+% \newglossaryentry{}{
+%     name={},
+%     description={\href{}{}}
+%     % , text={} % Display differently in text than in glossary
+%     % , plural={} % Default plural appends an 's'
+% }
+
+% EXAMPLE
+\newglossaryentry{ts-def}{
+    name={TypeScript},
+    description={\href{http://www.typescriptlang.org/}{is a typed superset of JavaScript that compiles to plain JavaScript}}
+}
+
+
+
+%%%%%%%%%%%%%%%%%%
+%%%% ACRONYMS %%%%
+%%%%%%%%%%%%%%%%%%
+
+% Basic usage:
+%   \gls{label}
+%   \glspl{plural}
+%   \acrlong{label}  -> Amazon Web Services
+%   \acrfull{label}  -> Amazon Web Services (AWS)
+%   \arcshort{label} -> AWS
+
+% \newacronym{label}{abbreviation}{words}
+
+% EXAMPLES
+\newacronym{aws}{AWS}{Amazon Web Services}
+\newacronym{ts}{TS}{\gls{ts-def}} % Can reference glossary
+\newacronym{srs}{SRS}{Software Requirements Specification}
+
+
+
+% Show all definitions regardless of if they've been used
+\glsaddall
