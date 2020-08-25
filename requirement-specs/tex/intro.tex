@@ -14,3 +14,13 @@
             \item Single spaced lines
             \item $1\inch$ margins
         \end{itemize}
+
+        \subsubsection{Code Snippet Example}\label{sec:code-snippet-example}
+            \begin{minted}{cpp}
+#include <compare>
+struct IntWrapper {
+    int value;
+    constexpr IntWrapper(int value): value{value} { }
+    auto operator<=>(const IntWrapper&) const = default;
+};
+            \end{minted}
